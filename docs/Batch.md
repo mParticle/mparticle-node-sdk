@@ -1,0 +1,28 @@
+# mParticle.Batch
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**events** | [**[EventBase]**](EventBase.md) |  | [optional]
+**sourceRequestId** | **String** |  | [optional]
+**environment** | **String** |  |
+**ip** | **String** |  | [optional]
+**schemaVersion** | **Number** |  | [optional]
+**deviceInfo** | [**DeviceInformation**](DeviceInformation.md) |  | [optional]
+**applicationInfo** | [**ApplicationInformation**](ApplicationInformation.md) |  | [optional]
+**userAttributes** | **Object** |  | [optional]
+**deletedUserAttributes** | **[String]** |  | [optional]
+**userIdentities** | [**UserIdentities**](UserIdentities.md) |  | [optional]
+
+
+<a name="Environment"></a>
+## Enum: Environment
+
+
+* `production` (value: `"production"`)
+
+* `development` (value: `"development"`)
+
+
+
+
