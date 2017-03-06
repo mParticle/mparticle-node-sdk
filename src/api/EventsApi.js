@@ -39,7 +39,7 @@
    */
   var exports = function(configuration, apiClient) {
     this.configuration = configuration;
-    this.apiClient = apiClient || ApiClient.instance;
+    this.apiClient = apiClient || new ApiClient();
 
     if(this.configuration) {
       this.apiClient.authentications['basic'] = {
