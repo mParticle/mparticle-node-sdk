@@ -13,6 +13,9 @@ Name | Type | Description | Notes
 **userAttributes** | **Object** |  | [optional]
 **deletedUserAttributes** | **[String]** |  | [optional]
 **userIdentities** | [**UserIdentities**](UserIdentities.md) |  | [optional]
+**mpid** | **Number** |  | [optional]
+**mp_deviceid** | **String** |  | [optional]
+
 
 
 <a name="Environment"></a>

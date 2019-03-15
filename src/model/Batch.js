@@ -99,6 +99,12 @@
       if (data.hasOwnProperty('user_identities')) {
         obj['user_identities'] = UserIdentities.constructFromObject(data['user_identities']);
       }
+      if (data.hasOwnProperty('mpid')) {
+        obj['mpid'] = ApiClient.convertToType(data['mpid'], 'Number');
+      }
+      if (data.hasOwnProperty('mp_deviceid')) {
+        obj['mp_deviceid'] = ApiClient.convertToType(data['mp_deviceid'], 'String');
+      }
     }
     return obj;
   }
@@ -143,6 +149,14 @@
    * @member {module:model/UserIdentities} user_identities
    */
   exports.prototype['user_identities'] = undefined;
+  /**
+   * @member {Number} mpid
+   */
+  exports.prototype['mpid'] = undefined;
+  /**
+   * @member {String} mp_deviceid
+   */
+  exports.prototype['mp_deviceid'] = undefined;
 
 
   /**

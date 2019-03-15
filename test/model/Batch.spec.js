@@ -54,6 +54,18 @@
       expect(instance.environment).to.be('production');
     });
 
+    it('should have the property mpid', function() {
+      var instance = new mParticle.Batch(mParticle.Batch.Environment.production);
+      instance.mpid = 600868121729048600
+      expect(instance.mpid).to.be(600868121729048600);
+    });
+
+    it('should have the property mp_deviceid', function() {
+      var instance = new mParticle.Batch(mParticle.Batch.Environment.production);
+      instance.mp_deviceid = "59780f39-d7a0-4ebe-9950-280f937c29e2"
+      expect(instance.mp_deviceid).to.be("59780f39-d7a0-4ebe-9950-280f937c29e2");
+    });
+
   });
 
 }));
