@@ -28,6 +28,7 @@
       'model/EventBase',
       'model/EventData',
       'model/FirstRunEvent',
+      'model/GDPRConsentState',
       'model/GeoLocation',
       'model/MediaInfo',
       'model/NetworkPerformanceEvent',
@@ -69,6 +70,7 @@
       require('./model/EventBase'),
       require('./model/EventData'),
       require('./model/FirstRunEvent'),
+      require('./model/GDPRConsentState'),
       require('./model/GeoLocation'),
       require('./model/MediaInfo'),
       require('./model/NetworkPerformanceEvent'),
@@ -109,6 +111,7 @@
   EventBase,
   EventData,
   FirstRunEvent,
+  GDPRConsentState,
   GeoLocation,
   MediaInfo,
   NetworkPerformanceEvent,
@@ -252,6 +255,11 @@
     /**
      * The GeoLocation model constructor.
      * @property {module:model/GeoLocation}
+     */
+    GDPRConsentState: GDPRConsentState,
+    /**
+     * The MediaInfo model constructor.
+     * @property {module:model/GDPRConsentState}
      */
     GeoLocation: GeoLocation,
     /**
