@@ -29,7 +29,7 @@
 
   describe('GDPRConsentState', function() {
     it('should create an instance of GDPRConsentState', function() {
-      var instance = new mParticle.GDPRConsentState('document');
+      var instance = new mParticle.GDPRConsentState();
       expect(instance).to.be.a(mParticle.GDPRConsentState);
     });
 
@@ -77,6 +77,7 @@
         null,
         'IDFA:a5d934n0-232f-4afc-2e9a-3832d95zc702'
       );
+
       expect(instance.hardware_id).to.be(
         'IDFA:a5d934n0-232f-4afc-2e9a-3832d95zc702'
       );

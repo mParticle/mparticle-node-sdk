@@ -258,7 +258,7 @@
      */
     GDPRConsentState: GDPRConsentState,
     /**
-     * The MediaInfo model constructor.
+     * The GDPRConsentState model constructor.
      * @property {module:model/GDPRConsentState}
      */
     GeoLocation: GeoLocation,
