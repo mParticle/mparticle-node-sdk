@@ -10,18 +10,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define([], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory();
   } else {
     // Browser globals (root is window)
     if (!root.mParticle) {
       root.mParticle = {};
     }
-    root.mParticle.ConsentState = factory(root.mParticle.ApiClient);
+    root.mParticle.ConsentState = factory();
   }
-})(this, function(ApiClient) {
+})(this, function() {
   'use strict';
 
   /**
@@ -34,28 +34,13 @@
    * Constructs a new <code>ConsentState</code>.
    * @alias module:model/ConsentState
    * @class
-   * @param regulation {String}
-   * @param document {String}
-   * @param consented {Boolean}
-   * @param timestamp_unixtime_ms {Number}
-   * @param location {String}
-   * @param hardware_id {String}
+   * @param name {String}
+   * @param consent_state_object {Object}
    */
-  var exports = function(
-    regulation,
-    document,
-    consented,
-    timestamp_unixtime_ms,
-    location,
-    hardware_id
-  ) {
+  var exports = function() {
     var _this = this;
-    _this['regulation'] = regulation;
-    _this['document'] = document;
-    _this['consented'] = consented;
-    _this['timestamp_unixtime_ms'] = timestamp_unixtime_ms;
-    _this['location'] = location;
-    _this['hardware_id'] = hardware_id;
+
+    _this['gdpr'] = {};
   };
 
   /**
@@ -68,75 +53,14 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-
-      if (data.hasOwnProperty('regulation')) {
-        obj['regulation'] = ApiClient.convertToType(
-          data['regulation'],
-          'String'
-        );
-      }
-
-      if (data.hasOwnProperty('document')) {
-        obj['document'] = ApiClient.convertToType(data['document'], 'String');
-      }
-
-      if (data.hasOwnProperty('consented')) {
-        obj['consented'] = ApiClient.convertToType(
-          data['consented'],
-          'Boolean'
-        );
-      }
-
-      if (data.hasOwnProperty('timestamp_unixtime_ms')) {
-        obj['timestamp_unixtime_ms'] = ApiClient.convertToType(
-          data['timestamp_unixtime_ms'],
-          'Number'
-        );
-      }
-
-      if (data.hasOwnProperty('location')) {
-        obj['location'] = ApiClient.convertToType(data['location'], 'String');
-      }
-
-      if (data.hasOwnProperty('hardware_id')) {
-        obj['hardware_id'] = ApiClient.convertToType(
-          data['hardware_id'],
-          'String'
-        );
-      }
     }
     return obj;
   };
 
   /**
-   * @member {String} regulation
+   * @member {Object} gdpr
    */
-  exports.prototype['regulation'] = undefined;
-
-  /**
-   * @member {String} document
-   */
-  exports.prototype['document'] = undefined;
-
-  /**
-   * @member {Boolean} consented
-   */
-  exports.prototype['consented'] = undefined;
-
-  /**
-   * @member {Number} timestamp_unixtime_ms
-   */
-  exports.prototype['timestamp_unixtime_ms'] = undefined;
-
-  /**
-   * @member {String} location
-   */
-  exports.prototype['location'] = undefined;
-
-  /**
-   * @member {String} hardware_id
-   */
-  exports.prototype['hardware_id'] = undefined;
+  exports.prototype['gdpr'] = undefined;
 
   return exports;
 });
