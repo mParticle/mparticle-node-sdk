@@ -253,13 +253,13 @@
      */
     FirstRunEvent: FirstRunEvent,
     /**
-     * The GeoLocation model constructor.
-     * @property {module:model/GeoLocation}
+     * The GDPRConsentState model constructor.
+     * @property {module:model/GDPRConsentState}
      */
     GDPRConsentState: GDPRConsentState,
     /**
-     * The GDPRConsentState model constructor.
-     * @property {module:model/GDPRConsentState}
+     * The GeoLocation model constructor.
+     * @property {module:model/GeoLocation}
      */
     GeoLocation: GeoLocation,
     /**
