@@ -103,7 +103,12 @@
         obj['mpid'] = ApiClient.convertToType(data['mpid'], 'Number');
       }
       if (data.hasOwnProperty('mp_deviceid')) {
-        obj['mp_deviceid'] = ApiClient.convertToType(data['mp_deviceid'], 'String');
+      }
+      if (data.hasOwnProperty('consent_state')) {
+        // Deep copy consent state
+        obj['consent_state'] = JSON.parse(
+          JSON.stringify(data['consent_state'])
+        );
       }
     }
     return obj;
@@ -157,7 +162,10 @@
    * @member {String} mp_deviceid
    */
   exports.prototype['mp_deviceid'] = undefined;
-
+  /**
+   * @member {Object} consent_state
+   */
+  exports.prototype['consent_state'] = undefined;
 
   /**
    * Allowed values for the <code>environment</code> property.
