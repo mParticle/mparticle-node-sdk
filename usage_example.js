@@ -36,6 +36,20 @@ product_action.products = [product];
 product_action.tax_amount = 1.50;
 product_action.total_amount = 21.49;
 
+var gdpr_consent_state = new mParticle.GDPRConsentState(
+  'GDPR',
+  'document_agreement.v2',
+  true,
+  Date.now(),
+  'dtmgbank.com/signup',
+  'IDFA:a5d934n0-232f-4afc-2e9a-3832d95zc702'
+);
+
+var consent_state = new mParticle.ConsentState();
+consent_state.gdpr = { document_agreement: gdpr_consent_state };
+
+batch.consent_state = consent_state;
+
 var commerce_event = new mParticle.CommerceEvent();
 commerce_event.product_action = product_action;
 commerce_event.timestamp_unixtime_ms = 1552679728376; //replace with time of transaction
