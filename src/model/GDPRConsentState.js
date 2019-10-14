@@ -34,7 +34,6 @@
    * Constructs a new <code>GDPRConsentState</code>.
    * @alias module:model/GDPRConsentState
    * @class
-   * @param regulation {String}
    * @param document {String}
    * @param consented {Boolean}
    * @param timestamp_unixtime_ms {Number}
@@ -42,7 +41,6 @@
    * @param hardware_id {String}
    */
   var exports = function(
-    regulation,
     document,
     consented,
     timestamp_unixtime_ms,
@@ -50,7 +48,6 @@
     hardware_id
   ) {
     var _this = this;
-    _this['regulation'] = regulation;
     _this['document'] = document;
     _this['consented'] = consented;
     _this['timestamp_unixtime_ms'] = timestamp_unixtime_ms;
@@ -68,13 +65,6 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-
-      if (data.hasOwnProperty('regulation')) {
-        obj['regulation'] = ApiClient.convertToType(
-          data['regulation'],
-          'String'
-        );
-      }
 
       if (data.hasOwnProperty('document')) {
         obj['document'] = ApiClient.convertToType(data['document'], 'String');
@@ -107,11 +97,6 @@
     }
     return obj;
   };
-
-  /**
-   * @member {String} regulation
-   */
-  exports.prototype['regulation'] = undefined;
 
   /**
    * @member {String} document

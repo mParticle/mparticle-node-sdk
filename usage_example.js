@@ -39,7 +39,6 @@ product_action.tax_amount = 1.5;
 product_action.total_amount = 21.49;
 
 var gdpr_consent_state = new mParticle.GDPRConsentState(
-  'GDPR',
   'document_agreement.v2',
   true,
   Date.now(),

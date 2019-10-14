@@ -33,33 +33,24 @@
       expect(instance).to.be.a(mParticle.GDPRConsentState);
     });
 
-    it('should have the property regulation (base name: "regulation")', function() {
-      var instance = new mParticle.GDPRConsentState('GDPR');
-      expect(instance.regulation).to.be('GDPR');
-    });
-
     it('should have the property document (base name: "document")', function() {
-      var instance = new mParticle.GDPRConsentState(
-        null,
-        'document_agreement.v2'
-      );
+      var instance = new mParticle.GDPRConsentState('document_agreement.v2');
       expect(instance.document).to.be('document_agreement.v2');
     });
 
     it('should have the property consented (base name: "consented")', function() {
-      var instance = new mParticle.GDPRConsentState(null, null, true);
+      var instance = new mParticle.GDPRConsentState(null, true);
       expect(instance.consented).to.be(true);
     });
 
     it('should have the property timestamp_unixtime_ms {base name: "timestamp_unixtime_ms" }', function() {
       var now = Date.now();
-      var instance = new mParticle.GDPRConsentState(null, null, null, now);
+      var instance = new mParticle.GDPRConsentState(null, null, now);
       expect(instance.timestamp_unixtime_ms).to.be(now);
     });
 
     it('should have the property location {base name: "location" }', function() {
       var instance = new mParticle.GDPRConsentState(
-        null,
         null,
         null,
         null,
@@ -70,7 +61,6 @@
 
     it('should have the property hardware_id {base name: "hardware_id" }', function() {
       var instance = new mParticle.GDPRConsentState(
-        null,
         null,
         null,
         null,
