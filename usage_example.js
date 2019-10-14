@@ -9,7 +9,7 @@ session_start.timestamp_unixtime_ms = 1552679728376;
 batch.addEvent(session_start);
 
 var user_identities = new mParticle.UserIdentities();
-user_identities.customerid = '123456'
+user_identities.customerid = '123456';
 batch.user_identities = user_identities;
 
 var device_info = new mParticle.DeviceInformation();
@@ -19,10 +19,12 @@ device_info.android_advertising_id = 'a26f9736-c262-47ea-988b-0b0504cee874';
 batch.device_info = device_info;
 
 // arbitrary example allowing you to create a segment of users trial users
-batch.user_attributes = {'Account type': 'trial', 'TrialEndDate':'2016-12-01'};
+batch.user_attributes = { 'Account type': 'trial', TrialEndDate: '2016-12-01' };
 
-var event = new mParticle.AppEvent(mParticle.AppEvent.CustomEventType.navigation, 
-  'Hello World');
+var event = new mParticle.AppEvent(
+  mParticle.AppEvent.CustomEventType.navigation,
+  'Hello World'
+);
 
 batch.addEvent(event);
 
@@ -33,7 +35,7 @@ product.price = 19.99;
 
 var product_action = new mParticle.ProductAction('purchase');
 product_action.products = [product];
-product_action.tax_amount = 1.50;
+product_action.tax_amount = 1.5;
 product_action.total_amount = 21.49;
 
 var gdpr_consent_state = new mParticle.GDPRConsentState(
@@ -68,12 +70,12 @@ var api = new mParticle.EventsApi(new mParticle.Configuration(
     'REPLACE WITH API SECRET'));
 
 batch.user_identities = new mParticle.UserIdentities();
-batch.user_identities.customerid = '123456' // identify the user (required)
+batch.user_identities.customerid = '123456'; // identify the user (required)
 
-batch.user_attributes = {'hair color': 'brown'}
+batch.user_attributes = { 'hair color': 'brown' };
 
-batch.mpid = 600868121729048600
-batch.mp_deviceid = "59780f39-d7a0-4ebe-9950-280f937c29e2"
+batch.mpid = 600868121729048600;
+batch.mp_deviceid = '59780f39-d7a0-4ebe-9950-280f937c29e2';
 
 var body = [batch]; // {[Batch]} Up to 100 Batch objects
 
@@ -88,4 +90,4 @@ var callback = function(error, data, response) {
 api.bulkUploadEvents(body, callback);
 
 // or upload a single batch
-//api.uploadEvents(body, batch) 
+//api.uploadEvents(body, batch)
