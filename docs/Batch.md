@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **userAttributes** | **Object** |  | [optional]
 **deletedUserAttributes** | **[String]** |  | [optional]
 **userIdentities** | [**UserIdentities**](UserIdentities.md) |  | [optional]
+**consentState** | [**ConsentState**](ConsentState.md) |  | [optional]
 **mpid** | **Number** |  | [optional]
 **mp_deviceid** | **String** |  | [optional]
 

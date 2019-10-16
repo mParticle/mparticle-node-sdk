@@ -1,11 +1,11 @@
 {
   "name": "mparticle",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Node SDK for the mParticle HTTP API",
   "license": "Apache-2.0",
   "main": "src/mparticle.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --recursive"
+    "test": "mocha --recursive"
   },
   "dependencies": {
     "superagent": "^3.8.3"

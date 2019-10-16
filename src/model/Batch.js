@@ -10,22 +10,43 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApplicationInformation', 'model/DeviceInformation', 'model/EventBase', 'model/UserIdentities'], factory);
+    define([
+      'ApiClient',
+      'model/ApplicationInformation',
+      'model/DeviceInformation',
+      'model/EventBase',
+      'model/UserIdentities'
+    ], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ApplicationInformation'), require('./DeviceInformation'), require('./EventBase'), require('./UserIdentities'));
+    module.exports = factory(
+      require('../ApiClient'),
+      require('./ApplicationInformation'),
+      require('./DeviceInformation'),
+      require('./EventBase'),
+      require('./UserIdentities')
+    );
   } else {
     // Browser globals (root is window)
     if (!root.mParticle) {
       root.mParticle = {};
     }
-    root.mParticle.Batch = factory(root.mParticle.ApiClient, root.mParticle.ApplicationInformation, root.mParticle.DeviceInformation, root.mParticle.EventBase, root.mParticle.UserIdentities);
+    root.mParticle.Batch = factory(
+      root.mParticle.ApiClient,
+      root.mParticle.ApplicationInformation,
+      root.mParticle.DeviceInformation,
+      root.mParticle.EventBase,
+      root.mParticle.UserIdentities
+    );
   }
-}(this, function(ApiClient, ApplicationInformation, DeviceInformation, EventBase, UserIdentities) {
+})(this, function(
+  ApiClient,
+  ApplicationInformation,
+  DeviceInformation,
+  EventBase,
+  UserIdentities
+) {
   'use strict';
-
-
-
 
   /**
    * The Batch model module.
@@ -42,20 +63,15 @@
   var exports = function(environment) {
     var _this = this;
 
-
-
     _this['environment'] = environment;
 
-
-
     _this.addEvent = function(event) {
-      if(!this.events) {
+      if (!this.events) {
         this.events = [];
       }
 
       this.events.push(new EventBase(event, event.getEventType()));
     };
-
   };
 
   /**
@@ -73,41 +89,71 @@
         obj['events'] = ApiClient.convertToType(data['events'], [EventBase]);
       }
       if (data.hasOwnProperty('source_request_id')) {
-        obj['source_request_id'] = ApiClient.convertToType(data['source_request_id'], 'String');
+        obj['source_request_id'] = ApiClient.convertToType(
+          data['source_request_id'],
+          'String'
+        );
       }
       if (data.hasOwnProperty('environment')) {
-        obj['environment'] = ApiClient.convertToType(data['environment'], 'String');
+        obj['environment'] = ApiClient.convertToType(
+          data['environment'],
+          'String'
+        );
       }
       if (data.hasOwnProperty('ip')) {
         obj['ip'] = ApiClient.convertToType(data['ip'], 'String');
       }
       if (data.hasOwnProperty('schema_version')) {
-        obj['schema_version'] = ApiClient.convertToType(data['schema_version'], 'Number');
+        obj['schema_version'] = ApiClient.convertToType(
+          data['schema_version'],
+          'Number'
+        );
       }
       if (data.hasOwnProperty('device_info')) {
-        obj['device_info'] = DeviceInformation.constructFromObject(data['device_info']);
+        obj['device_info'] = DeviceInformation.constructFromObject(
+          data['device_info']
+        );
       }
       if (data.hasOwnProperty('application_info')) {
-        obj['application_info'] = ApplicationInformation.constructFromObject(data['application_info']);
+        obj['application_info'] = ApplicationInformation.constructFromObject(
+          data['application_info']
+        );
       }
       if (data.hasOwnProperty('user_attributes')) {
-        obj['user_attributes'] = ApiClient.convertToType(data['user_attributes'], Object);
+        obj['user_attributes'] = ApiClient.convertToType(
+          data['user_attributes'],
+          Object
+        );
       }
       if (data.hasOwnProperty('deleted_user_attributes')) {
-        obj['deleted_user_attributes'] = ApiClient.convertToType(data['deleted_user_attributes'], ['String']);
+        obj['deleted_user_attributes'] = ApiClient.convertToType(
+          data['deleted_user_attributes'],
+          ['String']
+        );
       }
       if (data.hasOwnProperty('user_identities')) {
-        obj['user_identities'] = UserIdentities.constructFromObject(data['user_identities']);
+        obj['user_identities'] = UserIdentities.constructFromObject(
+          data['user_identities']
+        );
       }
       if (data.hasOwnProperty('mpid')) {
         obj['mpid'] = ApiClient.convertToType(data['mpid'], 'Number');
       }
       if (data.hasOwnProperty('mp_deviceid')) {
-        obj['mp_deviceid'] = ApiClient.convertToType(data['mp_deviceid'], 'String');
+        obj['mp_deviceid'] = ApiClient.convertToType(
+          data['mp_deviceid'],
+          'String'
+        );
+      }
+      if (data.hasOwnProperty('consent_state')) {
+        // Deep copy consent state
+        obj['consent_state'] = JSON.parse(
+          JSON.stringify(data['consent_state'])
+        );
       }
     }
     return obj;
-  }
+  };
 
   /**
    * @member {Array.<module:model/EventBase>} events
@@ -157,7 +203,10 @@
    * @member {String} mp_deviceid
    */
   exports.prototype['mp_deviceid'] = undefined;
-
+  /**
+   * @member {Object} consent_state
+   */
+  exports.prototype['consent_state'] = undefined;
 
   /**
    * Allowed values for the <code>environment</code> property.
@@ -169,15 +218,13 @@
      * value: "production"
      * @const
      */
-    "production": "production",
+    production: 'production',
     /**
      * value: "development"
      * @const
      */
-    "development": "development"  };
-
+    development: 'development'
+  };
 
   return exports;
-}));
-
-
+});

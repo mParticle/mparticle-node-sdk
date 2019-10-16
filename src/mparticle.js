@@ -10,13 +10,129 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ApiResponse', 'model/ApiResponseErrors', 'model/AppEvent', 'model/ApplicationInformation', 'model/ApplicationStateTransitionEvent', 'model/AttributionInfo', 'model/Batch', 'model/BreadcrumbEvent', 'model/CommerceEvent', 'model/CrashReportEvent', 'model/DeviceCurrentState', 'model/DeviceInformation', 'model/EventBase', 'model/EventData', 'model/FirstRunEvent', 'model/GeoLocation', 'model/MediaInfo', 'model/NetworkPerformanceEvent', 'model/OptOutEvent', 'model/Product', 'model/ProductAction', 'model/ProductImpression', 'model/ProfileEvent', 'model/Promotion', 'model/PromotionAction', 'model/PushMessageEvent', 'model/PushRegistrationEvent', 'model/ScreenViewEvent', 'model/SessionEndEvent', 'model/SessionStartEvent', 'model/ShoppingCart', 'model/SourceInformation', 'model/UserIdentities', 'api/EventsApi',
-    'api/Configuration'], factory);
+    define([
+      'ApiClient',
+      'model/ApiResponse',
+      'model/ApiResponseErrors',
+      'model/AppEvent',
+      'model/ApplicationInformation',
+      'model/ApplicationStateTransitionEvent',
+      'model/AttributionInfo',
+      'model/Batch',
+      'model/BreadcrumbEvent',
+      'model/ConsentState',
+      'model/CommerceEvent',
+      'model/CrashReportEvent',
+      'model/DeviceCurrentState',
+      'model/DeviceInformation',
+      'model/EventBase',
+      'model/EventData',
+      'model/FirstRunEvent',
+      'model/GDPRConsentState',
+      'model/GeoLocation',
+      'model/MediaInfo',
+      'model/NetworkPerformanceEvent',
+      'model/OptOutEvent',
+      'model/Product',
+      'model/ProductAction',
+      'model/ProductImpression',
+      'model/ProfileEvent',
+      'model/Promotion',
+      'model/PromotionAction',
+      'model/PushMessageEvent',
+      'model/PushRegistrationEvent',
+      'model/ScreenViewEvent',
+      'model/SessionEndEvent',
+      'model/SessionStartEvent',
+      'model/ShoppingCart',
+      'model/SourceInformation',
+      'model/UserIdentities',
+      'api/EventsApi',
+      'api/Configuration'
+    ], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/ApiResponse'), require('./model/ApiResponseErrors'), require('./model/AppEvent'), require('./model/ApplicationInformation'), require('./model/ApplicationStateTransitionEvent'), require('./model/AttributionInfo'), require('./model/Batch'), require('./model/BreadcrumbEvent'), require('./model/CommerceEvent'), require('./model/CrashReportEvent'), require('./model/DeviceCurrentState'), require('./model/DeviceInformation'), require('./model/EventBase'), require('./model/EventData'), require('./model/FirstRunEvent'), require('./model/GeoLocation'), require('./model/MediaInfo'), require('./model/NetworkPerformanceEvent'), require('./model/OptOutEvent'), require('./model/Product'), require('./model/ProductAction'), require('./model/ProductImpression'), require('./model/ProfileEvent'), require('./model/Promotion'), require('./model/PromotionAction'), require('./model/PushMessageEvent'), require('./model/PushRegistrationEvent'), require('./model/ScreenViewEvent'), require('./model/SessionEndEvent'), require('./model/SessionStartEvent'), require('./model/ShoppingCart'), require('./model/SourceInformation'), require('./model/UserIdentities'), require('./api/EventsApi'), require('./api/Configuration'));
+    module.exports = factory(
+      require('./ApiClient'),
+      require('./model/ApiResponse'),
+      require('./model/ApiResponseErrors'),
+      require('./model/AppEvent'),
+      require('./model/ApplicationInformation'),
+      require('./model/ApplicationStateTransitionEvent'),
+      require('./model/AttributionInfo'),
+      require('./model/Batch'),
+      require('./model/BreadcrumbEvent'),
+      require('./model/ConsentState'),
+      require('./model/CommerceEvent'),
+      require('./model/CrashReportEvent'),
+      require('./model/DeviceCurrentState'),
+      require('./model/DeviceInformation'),
+      require('./model/EventBase'),
+      require('./model/EventData'),
+      require('./model/FirstRunEvent'),
+      require('./model/GDPRConsentState'),
+      require('./model/GeoLocation'),
+      require('./model/MediaInfo'),
+      require('./model/NetworkPerformanceEvent'),
+      require('./model/OptOutEvent'),
+      require('./model/Product'),
+      require('./model/ProductAction'),
+      require('./model/ProductImpression'),
+      require('./model/ProfileEvent'),
+      require('./model/Promotion'),
+      require('./model/PromotionAction'),
+      require('./model/PushMessageEvent'),
+      require('./model/PushRegistrationEvent'),
+      require('./model/ScreenViewEvent'),
+      require('./model/SessionEndEvent'),
+      require('./model/SessionStartEvent'),
+      require('./model/ShoppingCart'),
+      require('./model/SourceInformation'),
+      require('./model/UserIdentities'),
+      require('./api/EventsApi'),
+      require('./api/Configuration')
+    );
   }
-}(function(ApiClient, ApiResponse, ApiResponseErrors, AppEvent, ApplicationInformation, ApplicationStateTransitionEvent, AttributionInfo, Batch, BreadcrumbEvent, CommerceEvent, CrashReportEvent, DeviceCurrentState, DeviceInformation, EventBase, EventData, FirstRunEvent, GeoLocation, MediaInfo, NetworkPerformanceEvent, OptOutEvent, Product, ProductAction, ProductImpression, ProfileEvent, Promotion, PromotionAction, PushMessageEvent, PushRegistrationEvent, ScreenViewEvent, SessionEndEvent, SessionStartEvent, ShoppingCart, SourceInformation, UserIdentities, EventsApi, Configuration) {
+})(function(
+  ApiClient,
+  ApiResponse,
+  ApiResponseErrors,
+  AppEvent,
+  ApplicationInformation,
+  ApplicationStateTransitionEvent,
+  AttributionInfo,
+  Batch,
+  BreadcrumbEvent,
+  ConsentState,
+  CommerceEvent,
+  CrashReportEvent,
+  DeviceCurrentState,
+  DeviceInformation,
+  EventBase,
+  EventData,
+  FirstRunEvent,
+  GDPRConsentState,
+  GeoLocation,
+  MediaInfo,
+  NetworkPerformanceEvent,
+  OptOutEvent,
+  Product,
+  ProductAction,
+  ProductImpression,
+  ProfileEvent,
+  Promotion,
+  PromotionAction,
+  PushMessageEvent,
+  PushRegistrationEvent,
+  ScreenViewEvent,
+  SessionEndEvent,
+  SessionStartEvent,
+  ShoppingCart,
+  SourceInformation,
+  UserIdentities,
+  EventsApi,
+  Configuration
+) {
   'use strict';
 
   /**
@@ -97,6 +213,11 @@
      */
     BreadcrumbEvent: BreadcrumbEvent,
     /**
+     * The ConsentState model constructor
+     * @property {module:model/ConsentState}
+     */
+    ConsentState: ConsentState,
+    /**
      * The CommerceEvent model constructor.
      * @property {module:model/CommerceEvent}
      */
@@ -131,6 +252,11 @@
      * @property {module:model/FirstRunEvent}
      */
     FirstRunEvent: FirstRunEvent,
+    /**
+     * The GDPRConsentState model constructor.
+     * @property {module:model/GDPRConsentState}
+     */
+    GDPRConsentState: GDPRConsentState,
     /**
      * The GeoLocation model constructor.
      * @property {module:model/GeoLocation}
@@ -235,4 +361,4 @@
   };
 
   return exports;
-}));
+});
