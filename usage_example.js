@@ -86,9 +86,9 @@ session_end.timestamp_unixtime_ms = 1552679728376 + 10000;
 
 batch.addEvent(session_end);
 
-var api = new mParticle.EventsApi(new mParticle.Configuration(
-    'REPLACE WITH API KEY', 
-    'REPLACE WITH API SECRET'));
+var api = new mParticle.EventsApi(
+  new mParticle.Configuration('REPLACE WITH API KEY', 'REPLACE WITH API SECRET')
+);
 
 batch.user_identities = new mParticle.UserIdentities();
 batch.user_identities.customerid = '123456'; // identify the user (required)
