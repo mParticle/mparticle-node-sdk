@@ -163,7 +163,10 @@ exports.prototype['location'] = undefined;
    */
 exports.prototype['device_current_state'] = undefined;
 
-
+  /**
+   * @member {module:model/CustomFlags} custom_flags
+   */
+  exports.prototype['custom_flags'] = undefined;
 
   return exports;
 }));

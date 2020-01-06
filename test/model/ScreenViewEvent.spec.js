@@ -59,6 +59,19 @@
       expect(instance.getEventType()).to.be('screen_view');
     });
 
+    it('should have the property customFlags', function() {
+      var instance = new mParticle.ScreenViewEvent();
+      instance.custom_flags = {
+        foo: 'bar',
+        answer: 42,
+        arrays: ['foo', 'bar', 'baz']
+      };
+      expect(instance).to.be.a(mParticle.ScreenViewEvent);
+      expect(instance.custom_flags.foo).to.be('bar');
+      expect(instance.custom_flags.answer).to.be(42);
+      expect(instance.custom_flags.arrays).to.eql(['foo', 'bar', 'baz']);
+    });
+  });
   });
 
 }));

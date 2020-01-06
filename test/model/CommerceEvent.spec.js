@@ -54,6 +54,19 @@
       expect(instance.getEventType()).to.be('commerce_event');
     });
 
+    it('should have the property customFlags', function() {
+      var instance = new mParticle.CommerceEvent();
+      instance.custom_flags = {
+        foo: 'bar',
+        answer: 42,
+        arrays: ['foo', 'bar', 'baz']
+      };
+      expect(instance).to.be.a(mParticle.CommerceEvent);
+      expect(instance.custom_flags.foo).to.be('bar');
+      expect(instance.custom_flags.answer).to.be(42);
+      expect(instance.custom_flags.arrays).to.eql(['foo', 'bar', 'baz']);
+    });
+  });
   });
 
 }));
