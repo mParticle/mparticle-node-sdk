@@ -10,10 +10,10 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/mParticle'], factory);
+    define(['expect.js', '../../src/mparticle'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/mParticle'));
+    factory(require('expect.js'), require('../../src/mparticle'));
   } else {
     // Browser globals (root is window)
     factory(root.expect, root.mParticle);
