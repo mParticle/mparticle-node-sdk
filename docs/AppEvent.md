@@ -1,35 +1,32 @@
 # mParticle.AppEvent
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**customEventType** | **String** |  |
-**eventName** | **String** |  |
-**mediaInfo** | [**MediaInfo**](MediaInfo.md) |  | [optional]
 
+| Name                | Type                          | Description | Notes      |
+| ------------------- | ----------------------------- | ----------- | ---------- |
+| **customEventType** | **String**                    |             |
+| **eventName**       | **String**                    |             |
+| **mediaInfo**       | [**MediaInfo**](MediaInfo.md) |             | [optional] |
+| **custom_flags**    | **Object**                    |             | [optional] |
 
 <a name="CustomEventType"></a>
+
 ## Enum: CustomEventType
 
+- `unknown` (value: `"unknown"`)
 
-* `unknown` (value: `"unknown"`)
+- `navigation` (value: `"navigation"`)
 
-* `navigation` (value: `"navigation"`)
+- `location` (value: `"location"`)
 
-* `location` (value: `"location"`)
+- `search` (value: `"search"`)
 
-* `search` (value: `"search"`)
+- `transaction` (value: `"transaction"`)
 
-* `transaction` (value: `"transaction"`)
+- `user_content` (value: `"user_content"`)
 
-* `user_content` (value: `"user_content"`)
+- `user_preference` (value: `"user_preference"`)
 
-* `user_preference` (value: `"user_preference"`)
+- `social` (value: `"social"`)
 
-* `social` (value: `"social"`)
-
-* `other` (value: `"other"`)
-
-
-
-
+- `other` (value: `"other"`)

@@ -3,6 +3,15 @@
 var mParticle = require('./src/mparticle.js');
 var batch = new mParticle.Batch(mParticle.Batch.Environment.development);
 
+var appEvent = new mParticle.AppEvent();
+appEvent.event_name = 'Test App Event';
+appEvent.custom_event_type = 'other';
+appEvent.custom_flags = {
+  foo: 'bar',
+  answer: 42,
+  arrays: ['foo', 'bar', 'baz']
+};
+
 var session_start = new mParticle.SessionStartEvent();
 session_start.session_id = 12345678;
 session_start.timestamp_unixtime_ms = 1552679728376;
@@ -20,6 +29,14 @@ batch.device_info = device_info;
 
 // arbitrary example allowing you to create a segment of users trial users
 batch.user_attributes = { 'Account type': 'trial', TrialEndDate: '2016-12-01' };
+
+var screen_view_event = new mParticle.ScreenViewEvent();
+screen_view_event.screen_name = 'Test Screen View Event';
+screen_view_event.custom_flags = {
+  foo: 'bar',
+  answer: 42,
+  arrays: ['foo', 'bar', 'baz']
+};
 
 var event = new mParticle.AppEvent(
   mParticle.AppEvent.CustomEventType.navigation,
@@ -54,6 +71,11 @@ batch.consent_state = consent_state;
 var commerce_event = new mParticle.CommerceEvent();
 commerce_event.product_action = product_action;
 commerce_event.timestamp_unixtime_ms = 1552679728376; //replace with time of transaction
+commerce_event.custom_flags = {
+  foo: 'bar',
+  answer: 42,
+  arrays: ['foo', 'bar', 'baz']
+};
 
 batch.addEvent(commerce_event);
 
@@ -64,9 +86,9 @@ session_end.timestamp_unixtime_ms = 1552679728376 + 10000;
 
 batch.addEvent(session_end);
 
-var api = new mParticle.EventsApi(new mParticle.Configuration(
-    'REPLACE WITH API KEY', 
-    'REPLACE WITH API SECRET'));
+var api = new mParticle.EventsApi(
+  new mParticle.Configuration('REPLACE WITH API KEY', 'REPLACE WITH API SECRET')
+);
 
 batch.user_identities = new mParticle.UserIdentities();
 batch.user_identities.customerid = '123456'; // identify the user (required)
