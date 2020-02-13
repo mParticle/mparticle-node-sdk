@@ -20,6 +20,7 @@
       'model/AttributionInfo',
       'model/Batch',
       'model/BreadcrumbEvent',
+      'model/CCPAConsentState',
       'model/ConsentState',
       'model/CommerceEvent',
       'model/CrashReportEvent',
@@ -62,6 +63,7 @@
       require('./model/AttributionInfo'),
       require('./model/Batch'),
       require('./model/BreadcrumbEvent'),
+      require('./model/CCPAConsentState'),
       require('./model/ConsentState'),
       require('./model/CommerceEvent'),
       require('./model/CrashReportEvent'),
@@ -103,6 +105,7 @@
   AttributionInfo,
   Batch,
   BreadcrumbEvent,
+  CCPAConsentState,
   ConsentState,
   CommerceEvent,
   CrashReportEvent,
@@ -212,6 +215,11 @@
      * @property {module:model/BreadcrumbEvent}
      */
     BreadcrumbEvent: BreadcrumbEvent,
+    /**
+     * The CCPAConsentState model constructor.
+     * @property {module:model/CCPAConsentState}
+     */
+    CCPAConsentState: CCPAConsentState,
     /**
      * The ConsentState model constructor
      * @property {module:model/ConsentState}

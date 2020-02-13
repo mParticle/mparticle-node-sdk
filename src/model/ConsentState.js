@@ -41,6 +41,7 @@
     var _this = this;
 
     _this['gdpr'] = {};
+    _this['ccpa'] = {};
   };
 
   /**
@@ -61,6 +62,11 @@
    * @member {Object} gdpr
    */
   exports.prototype['gdpr'] = undefined;
+
+  /**
+   * @member {Object} ccpa
+   */
+  exports.prototype['ccpa'] = undefined;
 
   return exports;
 });
