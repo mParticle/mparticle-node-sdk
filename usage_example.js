@@ -56,6 +56,7 @@ product_action.tax_amount = 1.5;
 product_action.total_amount = 21.49;
 
 var ccpa_consent_state = new mParticle.CCPAConsentState(
+  'document_agreement.v3',
   true,
   Date.now(),
   'mparticle.test/signup',

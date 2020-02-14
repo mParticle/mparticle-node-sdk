@@ -34,18 +34,21 @@
    * Constructs a new <code>CCPAConsentState</code>.
    * @alias module:model/CCPAConsentState
    * @class
+   * @param document {String}
    * @param consented {Boolean}
    * @param timestamp_unixtime_ms {Number}
    * @param location {String}
    * @param hardware_id {String}
    */
   var exports = function(
+    document,
     consented,
     timestamp_unixtime_ms,
     location,
     hardware_id
   ) {
     var _this = this;
+    _this['document'] = document;
     _this['consented'] = consented;
     _this['timestamp_unixtime_ms'] = timestamp_unixtime_ms;
     _this['location'] = location;
@@ -62,6 +65,10 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
+
+      if (data.hasOwnProperty('document')) {
+        obj['document'] = ApiClient.convertToType(data['document'], 'String');
+      }
 
       if (data.hasOwnProperty('consented')) {
         obj['consented'] = ApiClient.convertToType(
@@ -90,6 +97,11 @@
     }
     return obj;
   };
+
+  /**
+   * @member {String} document
+   */
+  exports.prototype['document'] = undefined;
 
   /**
    * @member {Boolean} consented
