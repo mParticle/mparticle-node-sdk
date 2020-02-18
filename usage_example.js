@@ -55,6 +55,14 @@ product_action.products = [product];
 product_action.tax_amount = 1.5;
 product_action.total_amount = 21.49;
 
+var ccpa_consent_state = new mParticle.CCPAConsentState(
+  'document_agreement.v3',
+  true,
+  Date.now(),
+  'mparticle.test/signup',
+  'IDFA:3f90np3n-3108-nee2-90xd-a30bd9pb04pd'
+);
+
 var gdpr_consent_state = new mParticle.GDPRConsentState(
   'document_agreement.v2',
   true,
@@ -65,6 +73,7 @@ var gdpr_consent_state = new mParticle.GDPRConsentState(
 
 var consent_state = new mParticle.ConsentState();
 consent_state.gdpr = { document_agreement: gdpr_consent_state };
+consent_state.ccpa = { data_sale_opt_out: ccpa_consent_state };
 
 batch.consent_state = consent_state;
 
