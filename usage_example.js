@@ -104,7 +104,7 @@ batch.user_identities.customerid = '123456'; // identify the user (required)
 
 batch.user_attributes = { 'hair color': 'brown' };
 
-batch.mpid = 600868121729048600;
+batch.mpid = '600868121729048611';
 batch.mp_deviceid = '59780f39-d7a0-4ebe-9950-280f937c29e2';
 
 var body = [batch]; // {[Batch]} Up to 100 Batch objects
