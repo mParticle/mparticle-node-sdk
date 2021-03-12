@@ -25,6 +25,8 @@ var device_info = new mParticle.DeviceInformation();
 // set any IDs that you have for this user
 device_info.ios_advertising_id = '07d2ebaa-e956-407e-a1e6-f05f871bf4e2';
 device_info.android_advertising_id = 'a26f9736-c262-47ea-988b-0b0504cee874';
+device_info.att_timestamp_unixtime_ms = 1552679728376;
+device_info.att_authorization_status = mParticle.DeviceInformation.ATTAuthorizationStatus.authorized;
 batch.device_info = device_info;
 
 // arbitrary example allowing you to create a segment of users trial users
