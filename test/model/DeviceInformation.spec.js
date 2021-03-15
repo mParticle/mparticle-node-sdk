@@ -49,6 +49,21 @@
       expect(instance).to.be.a(mParticle.DeviceInformation);
     });
 
+
+    it('should have the property attAuthorizationStatus (base name: "att_authorization_status")', function() {
+      var attStatus = mParticle.DeviceInformation.ATTAuthorizationStatus.authorized;
+      var instance = new mParticle.DeviceInformation();
+      instance.att_authorization_status = attStatus;
+      expect(instance.att_authorization_status).to.be(attStatus);
+    });
+
+    it('should have the property attTimestampUnixtimeMS (base name: "att_timestamp_unixtime_ms")', function() {
+      var attTimestamp = 1552679728376;
+      var instance = new mParticle.DeviceInformation();
+      instance.att_timestamp_unixtime_ms = attTimestamp;
+      expect(instance.att_timestamp_unixtime_ms).to.be(attTimestamp);
+    });
+
   });
 
 }));
