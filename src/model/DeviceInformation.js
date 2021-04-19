@@ -184,6 +184,12 @@
       if (data.hasOwnProperty('bluetooth_version')) {
         obj['bluetooth_version'] = ApiClient.convertToType(data['bluetooth_version'], 'String');
       }
+      if (data.hasOwnProperty('att_timestamp_unixtime_ms')) {
+        obj['att_timestamp_unixtime_ms'] = ApiClient.convertToType(data['att_timestamp_unixtime_ms'], 'Number');
+      }
+      if (data.hasOwnProperty('att_authorization_status')) {
+        obj['att_authorization_status'] = ApiClient.convertToType(data['att_authorization_status'], 'String');
+      }
       if (data.hasOwnProperty('ios_idfv')) {
         obj['ios_idfv'] = ApiClient.convertToType(data['ios_idfv'], 'String');
       }
@@ -323,6 +329,14 @@
    */
   exports.prototype['bluetooth_version'] = undefined;
   /**
+   * @member {Number} att_timestamp_unixtime_ms
+   */
+  exports.prototype['att_timestamp_unixtime_ms'] = undefined;
+  /**
+   * @member {String} att_authorization_status
+   */
+  exports.prototype['att_authorization_status'] = undefined;
+  /**
    * @member {String} ios_idfv
    */
   exports.prototype['ios_idfv'] = undefined;
@@ -358,6 +372,33 @@
      * @const
      */
     "tvOS": "tvOS"  };
+
+    /**
+   * Allowed values for the <code>att_authorization_status</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.ATTAuthorizationStatus = {
+    /**
+     * value: "authorized"
+     * @const
+     */
+    "authorized": "authorized",
+    /**
+     * value: "denied"
+     * @const
+     */
+    "denied": "denied",
+    /**
+     * value: "not_determined"
+     * @const
+     */
+    "restricted": "not_determined",
+    /**
+     * value: "restricted"
+     * @const
+     */
+    "restricted": "restricted"  };
 
 
   return exports;
