@@ -94,6 +94,42 @@
       if (data.hasOwnProperty('facebook_custom_audience_id')) {
         obj['facebook_custom_audience_id'] = ApiClient.convertToType(data['facebook_custom_audience_id'], 'String');
       }
+      if (data.hasOwnProperty('other_id_2')) {
+        obj['other_id_2'] = ApiClient.convertToType(data['other_id_2'], 'String');
+      }
+      if (data.hasOwnProperty('other_id_3')) {
+        obj['other_id_3'] = ApiClient.convertToType(data['other_id_3'], 'String');
+      }
+      if (data.hasOwnProperty('other_id_4')) {
+        obj['other_id_4'] = ApiClient.convertToType(data['other_id_4'], 'String');
+      }
+      if (data.hasOwnProperty('other_id_5')) {
+        obj['other_id_5'] = ApiClient.convertToType(data['other_id_5'], 'String');
+      }
+      if (data.hasOwnProperty('other_id_6')) {
+        obj['other_id_6'] = ApiClient.convertToType(data['other_id_6'], 'String');
+      }
+      if (data.hasOwnProperty('other_id_7')) {
+        obj['other_id_7'] = ApiClient.convertToType(data['other_id_7'], 'String');
+      }
+      if (data.hasOwnProperty('other_id_8')) {
+        obj['other_id_8'] = ApiClient.convertToType(data['other_id_8'], 'String');
+      }
+      if (data.hasOwnProperty('other_id_9')) {
+        obj['other_id_9'] = ApiClient.convertToType(data['other_id_9'], 'String');
+      }
+      if (data.hasOwnProperty('other_id_10')) {
+        obj['other_id_10'] = ApiClient.convertToType(data['other_id_10'], 'String');
+      }
+      if (data.hasOwnProperty('mobile_number')) {
+        obj['mobile_number'] = ApiClient.convertToType(data['mobile_number'], 'String');
+      }
+      if (data.hasOwnProperty('phone_number_2')) {
+        obj['phone_number_2'] = ApiClient.convertToType(data['phone_number_2'], 'String');
+      }
+      if (data.hasOwnProperty('phone_number_3')) {
+        obj['phone_number_3'] = ApiClient.convertToType(data['phone_number_3'], 'String');
+      }
     }
     return obj;
   }
@@ -138,6 +174,54 @@
    * @member {String} facebook_custom_audience_id
    */
   exports.prototype['facebook_custom_audience_id'] = undefined;
+  /**
+   * @member {String} other_id_2
+   */
+   exports.prototype['other_id_2'] = undefined;
+   /**
+   * @member {String} other_id_3
+   */
+  exports.prototype['other_id_3'] = undefined;
+  /**
+   * @member {String} other_id_4
+   */
+   exports.prototype['other_id_4'] = undefined;
+   /**
+   * @member {String} other_id_5
+   */
+  exports.prototype['other_id_5'] = undefined;
+  /**
+   * @member {String} other_id_6
+   */
+   exports.prototype['other_id_6'] = undefined;
+   /**
+   * @member {String} other_id_7
+   */
+  exports.prototype['other_id_7'] = undefined;
+  /**
+   * @member {String} other_id_8
+   */
+   exports.prototype['other_id_8'] = undefined;
+   /**
+   * @member {String} other_id_9
+   */
+  exports.prototype['other_id_9'] = undefined;
+  /**
+   * @member {String} other_id_10
+   */
+   exports.prototype['other_id_10'] = undefined;
+   /**
+   * @member {String} mobile_number
+   */
+  exports.prototype['mobile_number'] = undefined;
+  /**
+   * @member {String} phone_number_2
+   */
+   exports.prototype['phone_number_2'] = undefined;
+   /**
+   * @member {String} phone_number_3
+   */
+  exports.prototype['phone_number_3'] = undefined;
 
 
 
