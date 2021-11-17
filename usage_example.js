@@ -108,6 +108,12 @@ batch.user_attributes = { 'hair color': 'brown' };
 
 batch.mpid = 600868121729048600;
 batch.mp_deviceid = '59780f39-d7a0-4ebe-9950-280f937c29e2';
+var data_plan = new mParticle.DataPlanContext();
+data_plan.plan_id = 'docsite_v3_test';
+data_plan.plan_version = 1;
+var batch_context = new mParticle.BatchContext();
+batch_context.data_plan = data_plan;
+batch.context = batch_context;
 
 var body = [batch]; // {[Batch]} Up to 100 Batch objects
 

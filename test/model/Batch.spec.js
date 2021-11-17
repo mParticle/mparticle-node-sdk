@@ -66,6 +66,13 @@
       expect(instance.mp_deviceid).to.be("59780f39-d7a0-4ebe-9950-280f937c29e2");
     });
 
+    it('should have the property context', function() {
+      var instance = new mParticle.Batch(mParticle.Batch.Environment.production);
+      var testContext = new mParticle.BatchContext();
+      instance.context = testContext
+      expect(instance.context).to.be(testContext);
+    });
+
   });
 
 }));
