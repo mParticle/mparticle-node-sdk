@@ -1,6 +1,6 @@
 {
   "name": "mparticle",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Node SDK for the mParticle HTTP API",
   "license": "Apache-2.0",
   "main": "src/mparticle.js",
