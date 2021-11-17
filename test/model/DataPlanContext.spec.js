@@ -51,13 +51,13 @@
   
   
       it('should have the property plan_id', function() {
-        var instance = new mParticle.BatchContext();
+        var instance = new mParticle.DataPlanContext();
         instance.plan_id = "59780f39-d7a0-4ebe-9950-280f937c29e2";
         expect(instance.plan_id).to.be("59780f39-d7a0-4ebe-9950-280f937c29e2");
       });
 
       it('should have the property plan_version', function() {
-        var instance = new mParticle.BatchContext();
+        var instance = new mParticle.DataPlanContext();
         instance.plan_version = 2
         expect(instance.plan_version).to.be(2);
       });
