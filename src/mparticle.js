@@ -48,6 +48,8 @@
       'model/ShoppingCart',
       'model/SourceInformation',
       'model/UserIdentities',
+      'model/BatchContext',
+      'model/DataPlanContext',
       'api/EventsApi',
       'api/Configuration'
     ], factory);
@@ -91,6 +93,8 @@
       require('./model/ShoppingCart'),
       require('./model/SourceInformation'),
       require('./model/UserIdentities'),
+      require('./model/BatchContext'),
+      require('./model/DataPlanContext'),
       require('./api/EventsApi'),
       require('./api/Configuration')
     );
@@ -133,6 +137,8 @@
   ShoppingCart,
   SourceInformation,
   UserIdentities,
+  BatchContext,
+  DataPlanContext,
   EventsApi,
   Configuration
 ) {
@@ -355,6 +361,16 @@
      * @property {module:model/UserIdentities}
      */
     UserIdentities: UserIdentities,
+    /**
+     * The BatchContext model constructor.
+     * @property {module:model/BatchContext}
+     */
+    BatchContext: BatchContext,
+    /**
+     * The DataPlanContext model constructor.
+     * @property {module:model/DataPlanContext}
+     */
+    DataPlanContext: DataPlanContext,
     /**
      * The EventsApi service constructor.
      * @property {module:api/EventsApi}

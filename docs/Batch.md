@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **events** | [**[EventBase]**](EventBase.md) |  | [optional]
 **sourceRequestId** | **String** |  | [optional]
+**context** | [**BatchContext**](BatchContext.md) | | [optional]
 **environment** | **String** |  |
 **ip** | **String** |  | [optional]
 **schemaVersion** | **Number** |  | [optional]

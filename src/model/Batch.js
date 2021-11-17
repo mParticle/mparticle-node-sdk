@@ -15,7 +15,8 @@
       'model/ApplicationInformation',
       'model/DeviceInformation',
       'model/EventBase',
-      'model/UserIdentities'
+      'model/UserIdentities',
+      'model/BatchContext'
     ], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
@@ -24,7 +25,8 @@
       require('./ApplicationInformation'),
       require('./DeviceInformation'),
       require('./EventBase'),
-      require('./UserIdentities')
+      require('./UserIdentities'),
+      require('./BatchContext')
     );
   } else {
     // Browser globals (root is window)
@@ -36,7 +38,8 @@
       root.mParticle.ApplicationInformation,
       root.mParticle.DeviceInformation,
       root.mParticle.EventBase,
-      root.mParticle.UserIdentities
+      root.mParticle.UserIdentities,
+      root.mParticle.BatchContext
     );
   }
 })(this, function(
@@ -44,7 +47,8 @@
   ApplicationInformation,
   DeviceInformation,
   EventBase,
-  UserIdentities
+  UserIdentities,
+  BatchContext
 ) {
   'use strict';
 
@@ -145,6 +149,11 @@
           'String'
         );
       }
+      if (data.hasOwnProperty('context')) {
+        obj['context'] = BatchContext.constructFromObject(
+          data['context']
+        );
+      }
       if (data.hasOwnProperty('consent_state')) {
         // Deep copy consent state
         obj['consent_state'] = JSON.parse(
@@ -203,6 +212,10 @@
    * @member {String} mp_deviceid
    */
   exports.prototype['mp_deviceid'] = undefined;
+  /**
+   * @member {module:model/BatchContext} context
+   */
+     exports.prototype['context'] = undefined;
   /**
    * @member {Object} consent_state
    */
