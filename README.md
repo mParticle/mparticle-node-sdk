@@ -1,4 +1,4 @@
-<img src="http://static.mparticle.com/sdk/logo.svg" width="280">
+<img src="https://static.mparticle.com/sdk/logo.svg" width="280">
 
 ## mParticle Node SDK
 
