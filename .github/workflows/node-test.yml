@@ -26,4 +26,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build --if-present
+    - run: npm audit
     - run: npm test
+
+  security-checks:
+    name: "Security Lint Checks"
+    uses: mparticle/mparticle-workflows/.github/workflows/security-checks.yml@main
+    with:
+      base_branch: "master"
